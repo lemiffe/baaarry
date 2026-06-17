@@ -1,0 +1,32 @@
+---
+import { site } from "../data/site";
+import CtaButton from "./CtaButton.astro";
+---
+
+<section id="top" class="relative overflow-hidden bg-bg-deep px-6 py-24 text-center sm:py-32">
+  <div
+    class="pointer-events-none absolute inset-0 bg-cover bg-center opacity-10"
+    style="background-image: url('/bg-dark.jpg');"
+    aria-hidden="true"
+  >
+  </div>
+  <div class="relative mx-auto max-w-3xl">
+    <img src="/logo.svg" alt="Baaarry logo" class="logo mx-auto mb-6 object-scale-down" />
+    <h1 class="text-4xl hidden font-extrabold tracking-tight sm:text-5xl">
+      Fast &amp; Accurate A/B
+    </h1>
+    <p class="mx-auto mt-10 max-w-2xl text-lg text-muted">
+      Baaarry is a desktop <span class="text-fg">A/B mix companion for producers and mix/mastering engineers.</span>
+      Line your bounces up against reference tracks (and each other), switch instantly
+      between any point in any track, and see exactly where your master drifts on loudness,
+      EQ balance, amplitude, and stereo width.
+    </p>
+    <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <CtaButton href={site.downloadUrl}>Download Baaarry</CtaButton>
+      <CtaButton href={`mailto:${site.email}`} variant="secondary">Get in touch</CtaButton>
+    </div>
+    <p class="mt-6 text-sm text-muted">
+      Pay what you can, or grab it free. Available on macOS and Windows.
+    </p>
+  </div>
+</section>

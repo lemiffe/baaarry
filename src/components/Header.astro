@@ -1,0 +1,20 @@
+---
+import { site } from "../data/site";
+import CtaButton from "./CtaButton.astro";
+---
+
+<header class="sticky top-0 z-10 bg-accent shadow-lg">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
+    <a href="#top" class="flex items-center gap-3">
+      <img src="/sheep.svg" alt="" width="32" height="32" />
+      <span class="text-lg font-bold tracking-tight">{site.name}</span>
+      <span class="text-lg">-&nbsp; Mix Companion</span>
+    </a>
+    <div class="flex items-center gap-3">
+      <a href={`mailto:${site.email}`} class="hidden text-sm  hover:text-fg sm:inline">
+        Contact
+      </a>
+      <CtaButton href={site.downloadUrl} class="ml-3 px-3 py-1 text-sm shadow-lg" variant="tertiary">Get the App</CtaButton>
+    </div>
+  </nav>
+</header>

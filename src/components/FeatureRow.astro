@@ -1,0 +1,51 @@
+---
+import type { Feature } from "../data/features";
+
+interface Props {
+  feature: Feature;
+}
+
+const { feature } = Astro.props;
+const mediaFirst = feature.side === "left";
+const sectionBg = feature.bg === "bg-alt" ? "bg-bg-alt" : "bg-bg-light-slate";
+const eyebrowClass = feature.bg === "bg-alt" ? "text-secondary font-semibold" : "text-accent font-bold";
+const titleClass = feature.bg === "bg-alt" ? "" : "text-bg-deep";
+const bodyClass = feature.bg === "bg-alt" ? "text-muted" : "text-slate";
+const bulletClass = feature.bg === "bg-alt" ? "text-fg" : "text-accent font-semibold";
+---
+
+<section class={`${sectionBg} px-6 py-20`}>
+  <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+    <div class={mediaFirst ? "lg:order-1" : "lg:order-2"}>
+      <div
+        class="aspect-[16/10] overflow-hidden rounded-xl border border-border bg-panel shadow-xl"
+      >
+        <img
+          src={feature.media}
+          alt={feature.title}
+          width="1280"
+          height="800"
+          class="h-full w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <div class={mediaFirst ? "lg:order-2" : "lg:order-1"}>
+      <p class=`text-sm uppercase tracking-wider ${eyebrowClass}`>
+        {feature.eyebrow}
+      </p>
+      <h2 class=`mt-3 text-2xl font-bold sm:text-3xl ${titleClass}`>{feature.title}</h2>
+      <p class=`mt-4 text-lg leading-relaxed ${bodyClass}`>{feature.body}</p>
+      <ul class="mt-6 space-y-3">
+        {
+          feature.bullets.map((bullet) => (
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 flex-none rounded-full bg-accent" aria-hidden="true" />
+              <span class=`${bulletClass}`>{bullet}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

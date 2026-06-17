@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Baaarry: Fast & Accurate A/B for Mixes and Masters",
+  description = "A desktop A/B companion for producers and mix & mastering engineers. Compare your bounces against reference tracks on loudness, EQ balance, and stereo width.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/sheep.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://baaarry.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-bg text-fg">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,22 @@
+---
+import { capabilities } from "../data/featureList";
+---
+
+<section class="bg-bg-alt px-6 py-20">
+  <div class="mx-auto max-w-6xl">
+    <h2 class="text-center text-2xl font-bold sm:text-3xl">Everything in the box</h2>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        capabilities.map((cap) => (
+          <div class="rounded-xl border border-border bg-panel p-6">
+            <h3 class="flex items-start gap-2 font-semibold">
+              <span class="mt-1 text-secondary" aria-hidden="true">✓</span>
+              <span>{cap.title}</span>
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{cap.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

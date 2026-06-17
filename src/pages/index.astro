@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import FeatureRow from "../components/FeatureRow.astro";
+import { features } from "../data/features";
+import FeatureList from "../components/FeatureList.astro";
+import Pricing from "../components/Pricing.astro";
+import Faq from "../components/Faq.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header />
+  <main>
+    <Hero />
+    {features.map((feature) => <FeatureRow feature={feature} />)}
+    <FeatureList />
+    <Pricing />
+    <Faq />
+  </main>
+  <Footer />
+</Layout>

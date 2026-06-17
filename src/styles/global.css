@@ -1,0 +1,49 @@
+:root {
+    --bg: #14151b;
+    --bg-alt: #1b1d26;
+    --bg-deep: #0f1015;
+    --slate: #333542;
+    --bg-light-slate: #d5d7e1;
+    --panel: #1e2029;
+    --border: #333542;
+    --border-strong: #444758;
+    --fg: #ffffff;
+    --muted: #a2a6b8;
+    --accent: #d4217f;
+    --accent-fg: #ffffff;
+    --secondary: #1eceab;
+    --secondary-fg: #14151b;
+    --gold: #ffd459;
+}
+
+.logo {
+    height: 150px;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family:
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+}
+
+#top {
+    background-image: url("/bg-dark.jpg");
+}
